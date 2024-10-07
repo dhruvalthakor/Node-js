@@ -11,23 +11,23 @@ fs.appendFile("log.txt",log,()=>{
 
 switch (req.url) {
     case "/": {
-        res.end("Namaste ")
+        res.end("Namaste")
        break;
      }
   case "/user": {
-     res.end("Namaste User")
+     res.end("Namaste Users")
     break;
   }
   case "/about": {
-       res.end("about User")
+       res.end("about Users")
     break;
   }
   case "/team": {
-       res.end("team User")
+       res.end("team Users")
     break;
   }
   case "/home": {
-       res.end("home User")
+       res.end("home Users")
     break;
   }
   default: {
@@ -35,9 +35,9 @@ switch (req.url) {
   }
 }
 
-})
+});
 
-})
+});
 
 
 myserver.listen(8000,()=>{
