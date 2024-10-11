@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: rgb(6, 6, 6);
+            color: aliceblue;
+        }
+
+        a {
+            color: aliceblue;
+            text-decoration: none;
+            background-color: brown;
+            padding: 10px 25px;
+            border-radius: 10px;
+        }
+
+        .nev {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            font-size: 25px;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nev">
+        <li><a href="/">home</a></li>
+        <li><a href="/index">index</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="container">
+<form action="/add" method="post">
+    <input type="text" name="record" required>
+    <button> Add</button>
+</form>
+<div>
+    <ul>
+        <% records.forEach((record) => { %>
+            <li><%= record %></li>
+            <% }) %>
+    </ul>
+</div>
+    </div>
+</body>
+
+</html>
