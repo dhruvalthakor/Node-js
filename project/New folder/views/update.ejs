@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        div {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            width: 100%;
+        }
+        input[type="text"] {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            flex-grow: 1;
+            margin-right: 10px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        @media (max-width: 480px) {
+            div {
+                padding: 15px;
+            }
+            form {
+                flex-direction: column;
+            }
+            input[type="text"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            button[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/update/<%=index%>" method="post">
+            <input type="text" name="record" value="<%=record%>" required>
+            
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
