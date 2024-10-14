@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+  background-color: #87CEEB; 
+}
+
+.todo-box {
+  max-width: 500px;
+  width: 100%;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="todo-box bg-white p-4 rounded shadow">
+      <div class="text-center mb-4 d-flex  justify-content-center align-items-center gap-2">
+        <h3 class="fw-bold">Update List</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" style="color:rgb(0, 0, 5);" width="25" height="25" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+          </svg>
+      </div>
+      
+      <form action="/update/<%=index%>" method="post">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control"name="record" placeholder="update record" value="<%= record %>" required>
+        <button class="btn" style="background-color:rgb(51,205,50);" type="submit">
+          <i class="fa-solid fa-pen-to-square fa-lg" style="color: #00040a;"></i>
+        </button>
+    </div>
+</form>
+
+      <div class="text-success text-center mb-2">
+        <p> <a href="/">Cancel</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
