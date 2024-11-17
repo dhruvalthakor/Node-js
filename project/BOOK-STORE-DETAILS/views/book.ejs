@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Book Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* General styles */
+    body {
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 1200px;
+    }
+
+    /* Form title styling */
+    .page-title {
+      font-weight: bold;
+      color: #343a40;
+    }
+
+    /* Card styling */
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img-top {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Center content in cards */
+    .card-body {
+      text-align: center;
+    }
+
+    /* Button styles */
+    .btn-primary {
+      background-color: #0069d9;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer styling */
+    .footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Book Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h2 class="mb-4 page-title">Add a New Book</h2>
+
+    <!-- Book Add Form -->
+    <form action="/bookadd" method="post" class="row g-3 mb-5">
+      <div class="col-md-6">
+        <label for="bookurl" class="form-label">Book Image URL</label>
+        <input type="text" name="bookimg" id="bookurl" class="form-control" placeholder="Enter Book Image URL" required>
+      </div>
+      <div class="col-md-6">
+        <label for="bookName" class="form-label">Book Title</label>
+        <input type="text" name="bookName" id="bookName" class="form-control" placeholder="Enter Book Title" required>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+      </div>
+    </form>
+
+    <!-- Book Collection Display -->
+    <h1 class="page-title">Our Book Collection</h1>
+    <div class="row g-4 mt-4 gap-4">
+      <% bookData.map((data)=>{ %>
+    <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="<%= data.bookimg %>" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= data.bookName %></h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <a href="deletebook/<%= data.id %>" class="btn btn-danger btn-sm ms-4">Delete</a>
+                <a href="update/<%= data.id %>" class="btn btn-primary btn-sm  ms-3">edit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Book Store. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
