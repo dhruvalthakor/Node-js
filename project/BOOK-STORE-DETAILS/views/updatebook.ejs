@@ -109,6 +109,23 @@
                 <label for="bookName" class="form-label">Book Title</label>
                 <input type="text" name="bookName" id="bookName" class="form-control" value="<%= storeData.bookName %>" placeholder="Enter Book Title"
                     required>
+            </div> 
+            
+            <div class="col-md-6">
+                <label for="bookName" class="form-label">Book catagary</label>
+               <section name="Bookcatagary" >
+                <option value="" >selected</option>
+                <option value="History" <%= storeData.city === "History" ? "selected" :"" %>>History</option>
+                <option value="Science fiction" <%= storeData.city === "Science fiction" ? "selected" :"" %>>Science fiction</option>
+                <option value="Biography" <%= storeData.city === "Biography" ? "selected" :"" %>>Biography</option>
+                <option value="Mystery" <%= storeData.city === "Mystery" ? "selected" :"" %>>Mystery</option>
+                <option value="Business" <%= storeData.city === "Business" ? "selected" :"" %>>Business</option>
+               </section>
+            </div>
+            <div class="col-md-6">
+                <label for="bookName" class="form-label">Book price</label>
+                <input type="text" name="bookprice" id="bookName" class="form-control" value="<%= storeData.bookprice %>" placeholder="Enter Book Title"
+                    required>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Add Book</button>

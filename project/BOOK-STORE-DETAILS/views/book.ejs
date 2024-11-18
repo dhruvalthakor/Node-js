@@ -8,60 +8,47 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
-    /* General styles */
     body {
-      background-color: #f3f4f6;
-      color: #333;
+      background-color: #f8f9fa;
+      color: #343a40;
     }
 
-    /* Navbar styling */
     .navbar {
       background-color: #343a40;
     }
 
-    .navbar-brand, .navbar-nav .nav-link {
+    .navbar-brand,
+    .navbar-nav .nav-link {
       color: #ffffff !important;
+      font-weight: bold;
     }
 
-    /* Main container */
-    .container {
-      max-width: 1200px;
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
     }
 
-    /* Form title styling */
     .page-title {
       font-weight: bold;
-      color: #343a40;
+      color: #212529;
+      text-align: center;
+      margin: 40px 0 20px;
     }
 
-    /* Card styling */
     .card {
       border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .card-img-top {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    /* Center content in cards */
-    .card-body {
-      text-align: center;
-    }
-
-    /* Button styles */
     .btn-primary {
-      background-color: #0069d9;
+      background-color: #007bff;
       border: none;
     }
 
@@ -69,13 +56,37 @@
       background-color: #0056b3;
     }
 
-    /* Footer styling */
+    .btn-danger {
+      background-color: #dc3545;
+      border: none;
+    }
+
+    .btn-danger:hover {
+      background-color: #bb2d3b;
+    }
+
     .footer {
       background-color: #343a40;
-      color: #fff;
+      color: #ffffff;
       padding: 20px 0;
       text-align: center;
-      margin-top: 50px;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -85,61 +96,74 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Book Store</a>
+      <a class="navbar-brand" href="#"> Book Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+     
     </div>
   </nav>
 
+  <!-- Main Container -->
   <div class="container my-5">
-    <h2 class="mb-4 page-title">Add a New Book</h2>
+    <h2 class="page-title">Add a New Book</h2>
+    <div class="form-container mx-auto w-75">
+      <form action="/bookadd" method="post" class="row g-3">
+        <div class="col-md-12">
+          <label for="bookurl" class="form-label">Book Image URL</label>
+          <input type="url" name="bookimg" id="bookurl" class="form-control" placeholder="e.g., https://example.com/book.jpg" required>
+        </div>
+        <div class="col-md-6">
+          <label for="bookName" class="form-label">Book Title</label>
+          <input type="text" name="bookName" id="bookName" class="form-control" placeholder="Enter Book Title" required>
+        </div>
+        <div class="col-md-6">
+          <label for="bookCategory" class="form-label">Book Category</label>
+          <select name="Bookcatagary" id="bookCategory" class="form-select" required>
+            <option value="">Select Category</option>
+            <option value="History">History</option>
+            <option value="Science fiction">Science Fiction</option>
+            <option value="Biography">Biography</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="bookPrice" class="form-label">Book Price</label>
+          <input type="text" name="bookprice" id="bookPrice" class="form-control" placeholder="Enter Price" required>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Add Book</button>
+        </div>
+      </form>
+    </div>
 
-    <!-- Book Add Form -->
-    <form action="/bookadd" method="post" class="row g-3 mb-5">
-      <div class="col-md-6">
-        <label for="bookurl" class="form-label">Book Image URL</label>
-        <input type="text" name="bookimg" id="bookurl" class="form-control" placeholder="Enter Book Image URL" required>
-      </div>
-      <div class="col-md-6">
-        <label for="bookName" class="form-label">Book Title</label>
-        <input type="text" name="bookName" id="bookName" class="form-control" placeholder="Enter Book Title" required>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add Book</button>
-      </div>
-    </form>
-
-    <!-- Book Collection Display -->
-    <h1 class="page-title">Our Book Collection</h1>
-    <div class="row g-4 mt-4 gap-4">
-      <% bookData.map((data)=>{ %>
-    <div class="card mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="<%= data.bookimg %>" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><%= data.bookName %></h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="deletebook/<%= data.id %>" class="btn btn-danger btn-sm ms-4">Delete</a>
-                <a href="update/<%= data.id %>" class="btn btn-primary btn-sm  ms-3">edit</a>
-              </div>
+    <!-- Book Collection -->
+    <h1 class="page-title mt-5">Our Book Collection</h1>
+    <div class="row g-4">
+      <% bookData.map((data) => { %>
+      <div class="col-md-6 col-lg-4 w-25">
+        <div class="card">
+          <img src="<%= data.bookimg %>" class="card-img-top" alt="<%= data.bookName %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= data.bookName %></h5>
+            <p class="card-text">Category: <%= data.Bookcatagary %></p>
+            <p class="card-text"><strong>Price:</strong> ₹<%= data.bookprice %></p>
+            <div>
+              <a href="deletebook/<%= data.id %>" class="btn btn-danger btn-sm">Delete</a>
+              <a href="update/<%= data.id %>" class="btn btn-primary btn-sm ms-2">Edit</a>
             </div>
           </div>
         </div>
+      </div>
       <% }) %>
     </div>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Book Store. All Rights Reserved.</p>
-    </div>
+    <p>&copy; 2024 Book Store. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
