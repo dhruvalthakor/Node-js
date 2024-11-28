@@ -2,13 +2,13 @@ const express=require("express");
 const app=express();
 const connection =require("./cofig/db");
 const UserModel = require("./model/usemodel");
-
+const path= require("path")
 
 const port=8000;
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded());
-
+app.use("/uploads",express.static(path.join(__dirname,"/uploads")));
 
 
 app.get("/", async (req, res) => {
@@ -18,8 +18,11 @@ app.get("/", async (req, res) => {
     
   });
 
-app.post("/bookadd", async(req,res)=>{
+app.post("/bookadd",UserModel.imageUpload,async(req,res)=>{
 
+    if (req.file) {
+        req.body.image=UserModel.imagePath+"/"+req.file.filename
+    }
    await UserModel.create(req.body);
 
     res.redirect("back");

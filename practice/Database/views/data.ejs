@@ -110,16 +110,16 @@
     <h2 class="mb-4 page-title">Add a New Book</h2>
 
     <!-- Book Add Form -->
-    <form action="/bookadd" method="post" class="row g-3 mb-5">
-      <div class="col-md-12">
+    <form action="/bookadd" method="post" class="row g-3 mb-5" enctype="multipart/form-data">
+      <!-- <div class="col-md-12">
         <label for="bookurl" class="form-label"> Image URL</label>
         <input type="text" name="Image" id="bookurl" class="form-control" placeholder="Enter Book Image URL" required>
-      </div>
+      </div> -->
       <div class="col-md-12">
         <label for="bookName" class="form-label">Name</label>
         <input type="text" name="Name" id="bookName" class="form-control" placeholder="Enter Book Title" required>
       </div>
-      <div class="col-md-12">
+      <!-- <div class="col-md-12">
         <label for="bookName" class="form-label"> Title</label>
         <input type="text" name="title" id="bookName" class="form-control" placeholder="Enter Book Title" required>
       </div>
@@ -141,7 +141,14 @@
         <input type="text" name="sideimg" id="bookName" class="form-control" placeholder="Enter Book Title">
         <input type="text" name="sideimg" id="bookName" class="form-control" placeholder="Enter Book Title">
         <input type="text" name="sideimg" id="bookName" class="form-control" placeholder="Enter Book Title">
+      </div> -->
+
+      <div class="col-md-12">
+        <label for="bookName" class="form-label">image</label>
+        <input type="file" name="image" id="bookName" class="form-control">
       </div>
+
+      
 
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Add Book</button>
@@ -154,13 +161,12 @@
       <% bookData.map((data)=>{ %>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card">
-            <img src="<%= data.Image %>" class="card-img-top" alt="Book Image">
+           
             <div class="card-body">
               <h5 class="card-title"><%= data.Name %></h5>
-              <h2 class="card-title"><%= data.title %></h2>
-              <h3 class="card-title"><%= data.Color %></h3>
-              <h3 class="card-title"><%= data.price %></h3>
-            
+              
+           
+            <img src="<%= data.image %>" alt="" class="w-100">
             </div>
           </div>
         </div>
