@@ -26,22 +26,22 @@ app.get("/admin",(req,res)=>{
     app.use("/", adminRouter);
 
 
-    // app.get("/deleteData/:id", async (req, res) => {
-    //     // console.log(req.params.id);
-    //     try {
-    //       const getDataUser = await bookModel.findById(req.params.id);
-    //       console.log(getDataUser);
-    //       if (getDataUser) {
-    //         fs.unlinkSync(path.join(__dirname, getDataUser.image));
+    app.get("/deleteData/:id", async (req, res) => {
+        // console.log(req.params.id);
+        try {
+          const getDataUser = await bookModel.findById(req.params.id);
+          console.log(getDataUser);
+          if (getDataUser) {
+            fs.unlinkSync(path.join(__dirname, getDataUser.image));
             
-    //       }
-    //       await bookModel.findByIdAndDelete(req.params.id);
-    //       console.log("Data deleted successfully");
-    //       res.redirect("back");
-    //     } catch (err) {
-    //       console.log(err);
-    //     }
-    //   });
+          }
+          await bookModel.findByIdAndDelete(req.params.id);
+          console.log("Data deleted successfully");
+          res.redirect("back");
+        } catch (err) {
+          console.log(err);
+        }
+      });
 
 
       app.get("/editData/:id", async (req, res) => {
