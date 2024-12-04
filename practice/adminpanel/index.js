@@ -1,6 +1,7 @@
 const express =require("express");
 const dashbordrouter = require("./router/dashbordrouter");
 const connection = require("./cofig/db");
+var cookieParser = require('cookie-parser')
 const path =require("path")
 const app=express();
 let port = 8090;
@@ -11,7 +12,7 @@ app.set("view engine", "ejs");
 app.use("/assets",express.static(path.join(__dirname,"/assets")))
 
 app.use(express.urlencoded());
-
+app.use(cookieParser())
 app.use("/",dashbordrouter)
 
 
