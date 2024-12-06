@@ -1,6 +1,7 @@
 const express = require("express");
 const userModel = require("../model/userdatamodel");
 const path = require("path");
+const passport = require("passport");
 const dashbordrouter = express.Router()
 
 dashbordrouter.get("/", async (req, res) => {
@@ -51,24 +52,27 @@ dashbordrouter.post("/inserdata", userModel.imageUpload, async (req, res) => {
     }
 })
 
-dashbordrouter.post("/login", async (req, res) => {
-    const { Username, Userpassword } = req.body;
-    const getuserdata = await userModel.findOne({ Username })
-    // console.log(getuserdata);
-    if (getuserdata) {
-        if (getuserdata.Userpassword !== Userpassword) {
+dashbordrouter.post("/login",passport.authenticate("local",{failureRedirect:"/"}),async(req, res) => {
+    return res.redirect("/desabord");
+    // const { Username, Userpassword } = req.body;
+    // const getuserdata = await userModel.findOne({ Username })
+    // // console.log(getuserdata);
+    // if (getuserdata) {
+    //     if (getuserdata.Userpassword !== Userpassword) {
 
-            console.log("envalid");
-            res.redirect("/")
-            return;
-        }
-    } else {
-        console.log("user not found");
-        res.redirect("/")
-        return;
-    }
-    res.cookie("auth", getuserdata)
-    res.redirect("/desabord")
+    //         console.log("envalid");
+    //         res.redirect("/")
+    //         return;
+    //     }
+    // } else {
+    //     console.log("user not found");
+    //     res.redirect("/")
+    //     return;
+    // }
+    // res.cookie("auth", getuserdata)
+    // console.log("hello");
+    
+
 
 });
 
@@ -103,7 +107,7 @@ dashbordrouter.post("/changepasswords", async (req, res) => {
             } else { res.redirect("back") }
         } else { res.redirect("back") }
     }
-})
+});
 
 dashbordrouter.get("/logout", (req, res) => {
     res.clearCookie("auth")
