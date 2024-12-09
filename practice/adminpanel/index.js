@@ -7,7 +7,7 @@ const passport = require("passport");
 const path =require("path")
 const app=express();
 let port = 8090;
-const PassportStrategy=require("./cofig/passport-local")
+const passportLocal=require("./cofig/passport-local")
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 
@@ -20,7 +20,7 @@ app.use(session({
   secret: 'nodeAdmin',
   resave: false,
   saveUninitialized: true,
-  cookie: {maxAge:1000*60*60}
+  cookie: {maxAge:100*60*60}
 }));
 
 app.use(passport.initialize());

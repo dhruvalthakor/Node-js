@@ -46,20 +46,20 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Userprofile</th>
+                      <th scope="col">userprofile</th>
                       <th scope="col">username</th>
                       <th scope="col">useremail</th>
-                      <th scope="col">Userpassword</th>
+                      <th scope="col">password</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% userdata.map((data)=>{ %>
                       <tr>
                         <th scope="row"></th>
-                        <td><img src="<%= data.Userprofile %>" alt="" width="80px"></td>
-                        <td><%= data.Username %></td>
-                        <td><%= data.Useremail %></td>
-                        <td>@<%= data.Userpassword %></td>
+                        <td><img src="<%= data.userprofile %>" alt="" width="80px"></td>
+                        <td><%= data.username %></td>
+                        <td><%= data.useremail %></td>
+                        <td><%= data.password %></td>
                       </tr>
                       <% }) %>
                    

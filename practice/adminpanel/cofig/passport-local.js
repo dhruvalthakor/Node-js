@@ -1,42 +1,56 @@
 const passport = require("passport");
-const PassportStrategy = require("passport-local").Strategy;
 const userModel = require("../model/userdatamodel");
+const PassportStretrgy = require("passport-local").Strategy;
 
-passport.use(new PassportStrategy({ usernameField:"Username"}, async (Username, Userpassword, done) => {
-    console.log(Username,Userpassword);
-    
-    const userdata = await userModel.findOne({ Username: Username });
-    if (userdata) {
-        if (userdata.Userpassword === Userpassword) {
-            done(null, userdata);
+
+passport.use(new PassportStretrgy({ usernameField:'username' },async(username, password, done) => {
+    console.log(username ,password);
+    const getUserData = await userModel.findOne({ username: username });
+    if (getUserData) {
+        if (getUserData.password === password) {
+           return done(null, getUserData);
         } else {
-            done(null, false);
+           return done(null, false);
         }
     } else {
-        done(null, false);
+       return done(null, false);
     }
-
 }));
 
-passport.serializeUser(async (user, done) => {
-    const userdata = await userModel.findById(user.id);
-    if (userdata) {
-        done(null, userdata)
-    } else {
-        done(null, false)
+passport.serializeUser(async (user , done)=> {
+  
+    
+    const userData = await userModel.findById(user.id);
+    if(userData){
+       return done(null , userData.id);
+    }else{
+        done(null , false);
     }
+})
+passport.deserializeUser(async (id , done)=> {
+   
 
+    const userData = await userModel.findById(id);
+    if(userData){
+       return done(null , userData);
+    }else{
+       return done(null , false);
+    }
 });
 
-passport.deserializeUser(async (user, done) => {
-    const userdata = await userModel.findById(user.id);
-    if (userdata) {
-        done(null, userdata)
-    } else {
-        done(null, false)
-    }
+passport.isAuth = (req, res, next) => {
+   console.log(req.isAuthenticated());
+   if (req.isAuthenticated()) {
+     //req.isAuthenticated() will return true if user is logged in
+     next();
+   } else {
+     res.redirect("/");
+   }
+ };
 
-});
-
+ passport.setUser = (req, res, next) => {
+   res.locals.user = req.user;
+   next();
+ };
 
 module.exports = passport;

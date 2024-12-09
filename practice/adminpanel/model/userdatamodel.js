@@ -6,19 +6,19 @@ const path =require("path")
 const imagepath="/uploads"
 
 const userchema = mongoose.Schema({
-    Username: {
+    username: {
         type: String,
         required: true,
     },
-    Useremail: {
+    useremail: {
         type: String,
         required: true,
     },
-    Userpassword: {
+    password: {
         type: String,
         required: true,
     },
-    Userprofile: {
+    userprofile: {
         type: String,
         required: true,
     },
@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
     }
   })
   
-  userchema.statics.imageUpload = multer({ storage: storage }).single("Userprofile");
+  userchema.statics.imageUpload = multer({ storage: storage }).single("userprofile");
 
   userchema.statics.imagePath = imagepath;
 
