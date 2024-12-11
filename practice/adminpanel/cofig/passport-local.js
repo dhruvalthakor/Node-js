@@ -5,6 +5,7 @@ const PassportStretrgy = require("passport-local").Strategy;
 
 passport.use(new PassportStretrgy({ usernameField:'username' },async(username, password, done) => {
     console.log(username ,password);
+    
     const getUserData = await userModel.findOne({ username: username });
     if (getUserData) {
         if (getUserData.password === password) {
@@ -19,7 +20,6 @@ passport.use(new PassportStretrgy({ usernameField:'username' },async(username, p
 
 passport.serializeUser(async (user , done)=> {
   
-    
     const userData = await userModel.findById(user.id);
     if(userData){
        return done(null , userData.id);

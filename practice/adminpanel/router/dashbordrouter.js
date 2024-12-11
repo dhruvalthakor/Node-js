@@ -93,6 +93,7 @@ dashbordrouter.post("/login",passport.authenticate("local",{failureRedirect :"/"
 
    return res.redirect("/desabord");
 })
+
 dashbordrouter.get("/desabord",passport.isAuth,(req, res) => {
     console.log("hello from dashbaord")
     res.render("desabord")

@@ -1,402 +1,742 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Beautiful Dashboard UI</title>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link rel='stylesheet' href='https://abubakersaeed.github.io/dashboard-ui-n20/public/style.css'> -->
-<!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
-<!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
-<link rel="stylesheet" href="/styles/style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!-- 
-
-~ Created this in more than 16+ hours
-- More info on GitHub ;) 
-
--->
-
-<div class="dash">
-
-  <!-- HEADER -->
-  <header class="header">
-    <h1 class="header__heading"><a href="https://github.com/AbubakerSaeed/dashboard-ui-n20" target="_blank" rel="noreferrer noopener">DI</a></h1>
-    <div class="header__search">
-      <div class="header__search-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kapella Bootstrap Admin Dashboard Template</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="./assets/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./assets/base/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="./assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+				<div class="row p-0 m-0 proBanner" id="proBanner">
+					<div class="col-md-12 p-0 m-0">
+						<div class="card-body card-body-padding d-flex align-items-center justify-content-between">
+							<div class="ps-lg-1">
+								<div class="d-flex align-items-center justify-content-between">
+									<p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
+									<a href="https://www.bootstrapdash.com/product/kapella-admin-pro/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
+								</div>
+							</div>
+							<div class="d-flex align-items-center justify-content-between">
+								<a href="https://www.bootstrapdash.com/product/kapella-admin-pro/"><i class="mdi mdi-home me-3 text-white"></i></a>
+								<button id="bannerClose" class="btn border-0 p-0">
+									<i class="mdi mdi-close text-white me-0"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		<!-- partial:partials/_horizontal-navbar.html -->
+    <div class="horizontal-menu">
+      <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+        <div class="container-fluid">
+          <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+            <ul class="navbar-nav navbar-nav-left">
+              <li class="nav-item ms-0 me-5 d-lg-flex d-none">
+                <a href="#" class="nav-link horizontal-nav-left-menu"><i class="mdi mdi-format-list-bulleted"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+                  <i class="mdi mdi-bell mx-0"></i>
+                  <span class="count bg-success">2</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-success">
+                          <i class="mdi mdi-information mx-0"></i>
+                        </div>
+                    </div>
+                    <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                        <p class="font-weight-light small-text mb-0 text-muted">
+                          Just now
+                        </p>
+                    </div>
+                  </a>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-warning">
+                          <i class="mdi mdi-settings mx-0"></i>
+                        </div>
+                    </div>
+                    <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-normal">Settings</h6>
+                        <p class="font-weight-light small-text mb-0 text-muted">
+                          Private message
+                        </p>
+                    </div>
+                  </a>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-info">
+                          <i class="mdi mdi-account-box mx-0"></i>
+                        </div>
+                    </div>
+                    <div class="preview-item-content">
+                        <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                        <p class="font-weight-light small-text mb-0 text-muted">
+                          2 days ago
+                        </p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
+                  <i class="mdi mdi-email mx-0"></i>
+                  <span class="count bg-primary">4</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                  <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <img src="./assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+                    </div>
+                    <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+                        </h6>
+                        <p class="font-weight-light small-text text-muted mb-0">
+                          The meeting is cancelled
+                        </p>
+                    </div>
+                  </a>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <img src="./assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+                    </div>
+                    <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
+                        </h6>
+                        <p class="font-weight-light small-text text-muted mb-0">
+                          New product launch
+                        </p>
+                    </div>
+                  </a>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <img src="./assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+                    </div>
+                    <div class="preview-item-content flex-grow">
+                        <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
+                        </h6>
+                        <p class="font-weight-light small-text text-muted mb-0">
+                          Upcoming board meeting
+                        </p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link count-indicator "><i class="mdi mdi-message-reply-text"></i></a>
+              </li>
+              <li class="nav-item nav-search d-none d-lg-block ms-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="search">
+                        <i class="mdi mdi-magnify"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="search">
+                </div>
+              </li>	
+            </ul>
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="index.html"><img src="./assets/images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="./assets/images/logo-mini.svg" alt="logo"/></a>
+            </div>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item dropdown  d-lg-flex d-none">
+                  <button type="button" class="btn btn-inverse-primary btn-sm">Product </button>
+                </li>
+                <li class="nav-item dropdown d-lg-flex d-none">
+                  <a class="dropdown-toggle show-dropdown-arrow btn btn-inverse-primary btn-sm" id="nreportDropdown" href="#" data-bs-toggle="dropdown">
+                  Reports
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="nreportDropdown">
+                      <p class="mb-0 font-weight-medium float-left dropdown-header">Reports</p>
+                      <a class="dropdown-item">
+                        <i class="mdi mdi-file-pdf text-primary"></i>
+                        Pdf
+                      </a>
+                      <a class="dropdown-item">
+                        <i class="mdi mdi-file-excel text-primary"></i>
+                        Exel
+                      </a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown d-lg-flex d-none">
+                  <button type="button" class="btn btn-inverse-primary btn-sm">Settings</button>
+                </li>
+                <li class="nav-item nav-profile dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                    <span class="nav-profile-name">Johnson</span>
+                    <span class="online-status"></span>
+                    <img src="./assets/images/faces/face28.png" alt="profile"/>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                      <a class="dropdown-item">
+                        <i class="mdi mdi-settings text-primary"></i>
+                        Settings
+                      </a>
+                      <a class="dropdown-item">
+                        <i class="mdi mdi-logout text-primary"></i>
+                        Logout
+                      </a>
+                  </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+              <span class="mdi mdi-menu"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <nav class="bottom-navbar">
+        <div class="container">
+            <ul class="nav page-navigation">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <i class="mdi mdi-file-document-box menu-icon"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="mdi mdi-cube-outline menu-icon"></i>
+                    <span class="menu-title">UI Elements</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="submenu">
+                      <ul>
+                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="pages/forms/basic_elements.html" class="nav-link">
+                    <i class="mdi mdi-chart-areaspline menu-icon"></i>
+                    <span class="menu-title">Form Elements</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="pages/charts/chartjs.html" class="nav-link">
+                    <i class="mdi mdi-finance menu-icon"></i>
+                    <span class="menu-title">Charts</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="pages/tables/basic-table.html" class="nav-link">
+                    <i class="mdi mdi-grid menu-icon"></i>
+                    <span class="menu-title">Tables</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="pages/icons/mdi.html" class="nav-link">
+                    <i class="mdi mdi-emoticon menu-icon"></i>
+                    <span class="menu-title">Icons</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="mdi mdi-codepen menu-icon"></i>
+                    <span class="menu-title">Sample Pages</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="submenu">
+                      <ul class="submenu-item">
+                          <li class="nav-item"><a class="nav-link" href="pages/samples/login.html">Login</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages/samples/login-2.html">Login 2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Register</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages/samples/register-2.html">Register 2</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages/samples/lock-screen.html">Lockscreen</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="docs/documentation.html" class="nav-link">
+                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                    <span class="menu-title">Documentation</span></a>
+              </li>
+            </ul>
+        </div>
+      </nav>
     </div>
-    <div class="header__options">
-      <button class="header__pro">GO PRO</button>
-      <a href="#" class="header__link">Log in</a>
-      <a href="#" class="header__link">Sign up</a>
-    </div>
-  </header>
-
-  <!-- BODY -->
-  <div class="body">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      </div>
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      </div>
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      </div>
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      </div>
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-        </svg>
-      </div>
-
-      <div class="sidebar__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </div>
-
-    </div>
-
-    <!-- MAIN -->
-    <main class="main">
-
-      <!-- COL-1 -->
-      <div class="main__col-1">
-
-        <!-- HEADING -->
-        <div>
-          <h2 class="main__heading"><span style="background: linear-gradient(to bottom, hsl(247, 88%, 70%), hsl(282, 82%, 51%)); box-shadow: 0 2px 12px hsla(247, 88%, 70%, .3)">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-            </span> Abubaker Saeed</h2>
-          <p class="main__desc">Mixtures of places that I've visited & traveled which are worth to check out again ^_^</p>
-          <p class="main__sub"><span>Profile Collaborators:</span> <span>Cloud Strife & Jack Sparrow</span></p>
-        </div>
-
-        <!-- LIST -->
-        <div class="main__list-heading-wrap">
-          <h2 class="main__list-heading ss-heading">Recently Visit</h2>
-          <a href="#" class="ss-show">show all</a>
-        </div>
-
-        <ul class="main__list">
-
-          <li class="main__list-item">
-            <div>
-              <p class="main__list-content">Center Point</p>
+    <!-- partial -->
+		<div class="container-fluid page-body-wrapper">
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-sm-6 mb-4 mb-xl-0">
+							<div class="d-lg-flex align-items-center">
+								<div>
+									<h3 class="text-dark font-weight-bold mb-2">Hi, welcome back!</h3>
+									<h6 class="font-weight-normal mb-2">Last login was 23 hours ago. View details</h6>
+								</div>
+								<div class="ms-lg-5 d-lg-flex d-none">
+										<button type="button" class="btn bg-white btn-icon">
+											<i class="mdi mdi-view-grid text-success"></i>
+									</button>
+										<button type="button" class="btn bg-white btn-icon ms-2">
+											<i class="mdi mdi-format-list-bulleted font-weight-bold text-primary"></i>
+										</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="d-flex align-items-center justify-content-md-end">
+								<div class="pe-1 mb-3 mb-xl-0">
+										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
+											Feedback
+											<i class="mdi mdi-message-outline btn-icon-append"></i>                          
+										</button>
+								</div>
+								<div class="pe-1 mb-3 mb-xl-0">
+										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
+											Help
+											<i class="mdi mdi-help-circle-outline btn-icon-append"></i>                          
+									</button>
+								</div>
+								<div class="pe-1 mb-3 mb-xl-0">
+										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
+											Print
+											<i class="mdi mdi-printer btn-icon-append"></i>                          
+										</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div class="col-lg-8 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-lg-4">
+											<h4 class="card-title">Sales Difference</h4>
+											<canvas id="salesDifference"></canvas>
+											<p class="mt-3 mb-4 mb-lg-0">Lorem ipsum dolor sit amet,
+												consectetur adipisicing elit.
+											</p>
+										</div>
+										<div class="col-lg-5">
+											<h4 class="card-title">Best Sellers</h4>
+											<div class="row">
+												<div class="col-sm-4">
+													<ul class="graphl-legend-rectangle">
+														<li><span class="bg-danger"></span>Automotive</li>
+														<li><span class="bg-warning"></span>Books</li>
+														<li><span class="bg-info"></span>Software</li>
+														<li><span class="bg-success"></span>Video games</li>
+													</ul>
+												</div>
+												<div class="col-sm-8 grid-margin">
+													<canvas id="bestSellers"></canvas>
+												</div>
+											</div>
+											<p class="mt-3 mb-4 mb-lg-0">Lorem ipsum dolor sit amet,
+												consectetur adipisicing elit.
+											</p>
+										</div>
+										<div class="col-lg-3">
+											<h4 class="card-title">Social Media Statistics</h4>
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="progress progress-lg grouped mb-2">
+														<div class="progress-bar  bg-danger" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+														<div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+														<div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+														<div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-sm-12">
+													<ul class="graphl-legend-rectangle">
+														<li><span class="bg-danger"></span>Instagram (15%)</li>
+														<li><span class="bg-warning"></span>Facebook (20%)</li>
+														<li><span class="bg-info"></span>Website (25%)</li>
+														<li><span class="bg-success"></span>Youtube (40%)</li>
+													</ul>
+												</div>
+											</div>
+											<p class="mb-0 mt-2">Lorem ipsum dolor sit amet,
+												consectetur adipisicing elit.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 mb-3 mb-lg-0">
+							<div class="card congratulation-bg text-center">
+								<div class="card-body pb-0">
+									<img src="./assets/images/dashboard/face29.png" alt="">  
+									<h2 class="mt-3 text-white mb-3 font-weight-bold">Congratulations
+										Johnson
+									</h2>
+									<p>You have done 57.6% more sales today. 
+										Check your new badge in your profile.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-8 flex-column d-flex stretch-card">
+							<div class="row">
+								<div class="col-lg-4 d-flex grid-margin stretch-card">
+									<div class="card bg-primary">
+										<div class="card-body text-white">
+											<h3 class="font-weight-bold mb-3">18,39 (75GB)</h3>
+											<div class="progress mb-3">
+												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+											<p class="pb-0 mb-0">Bandwidth usage</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 d-flex grid-margin stretch-card">
+									<div class="card sale-diffrence-border">
+										<div class="card-body">
+											<h2 class="text-dark mb-2 font-weight-bold">$6475</h2>
+											<h4 class="card-title mb-2">Sales Difference</h4>
+											<small class="text-muted">APRIL 2019</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 d-flex grid-margin stretch-card">
+									<div class="card sale-visit-statistics-border">
+										<div class="card-body">
+											<h2 class="text-dark mb-2 font-weight-bold">$3479</h2>
+											<h4 class="card-title mb-2">Visit Statistics</h4>
+											<small class="text-muted">APRIL 2019</small>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 grid-margin d-flex stretch-card">
+									<div class="card">
+										<div class="card-body">
+											<div class="d-flex align-items-center justify-content-between">
+												<h4 class="card-title mb-2">Sales Difference</h4>
+												<div class="dropdown">
+													<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
+													<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="settingsDropdownsales">
+														<i class="mdi mdi-dots-horizontal"></i></a>
+														<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="settingsDropdownsales">
+															<a class="dropdown-item">
+																<i class="mdi mdi-grease-pencil text-primary"></i>
+																Edit
+															</a>
+															<a class="dropdown-item">
+																<i class="mdi mdi-delete text-primary"></i>
+																Delete
+															</a>
+														</div>
+												</div>
+											</div>
+											<div>
+												<ul class="nav nav-tabs tab-no-active-fill" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active ps-2 pe-2" id="revenue-for-last-month-tab" data-bs-toggle="tab" href="#revenue-for-last-month" role="tab" aria-controls="revenue-for-last-month" aria-selected="true">Revenue for last month</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link ps-2 pe-2" id="server-loading-tab" data-bs-toggle="tab" href="#server-loading" role="tab" aria-controls="server-loading" aria-selected="false">Server loading</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link ps-2 pe-2" id="data-managed-tab" data-bs-toggle="tab" href="#data-managed" role="tab" aria-controls="data-managed" aria-selected="false">Data managed</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link ps-2 pe-2" id="sales-by-traffic-tab" data-bs-toggle="tab" href="#sales-by-traffic" role="tab" aria-controls="sales-by-traffic" aria-selected="false">Sales by traffic</a>
+													</li>
+												</ul>
+												<div class="tab-content tab-no-active-fill-tab-content">
+													<div class="tab-pane fade show active" id="revenue-for-last-month" role="tabpanel" aria-labelledby="revenue-for-last-month-tab">
+														<div class="d-lg-flex justify-content-between">
+															<p class="mb-4">+5.2% vs last 7 days</p>
+															<div id="revenuechart-legend" class="revenuechart-legend">f</div>
+														</div>
+														<canvas id="revenue-for-last-month-chart"></canvas>
+													</div>
+													<div class="tab-pane fade" id="server-loading" role="tabpanel" aria-labelledby="server-loading-tab">
+														<div class="d-flex justify-content-between">
+															<p class="mb-4">+5.2% vs last 7 days</p>
+															<div id="serveLoading-legend" class="revenuechart-legend">f</div>
+														</div>
+														<canvas id="serveLoading"></canvas>
+													</div>
+													<div class="tab-pane fade" id="data-managed" role="tabpanel" aria-labelledby="data-managed-tab">
+														<div class="d-flex justify-content-between">
+															<p class="mb-4">+5.2% vs last 7 days</p>
+															<div id="dataManaged-legend" class="revenuechart-legend">f</div>
+														</div>
+														<canvas id="dataManaged"></canvas>
+													</div>
+													<div class="tab-pane fade" id="sales-by-traffic" role="tabpanel" aria-labelledby="sales-by-traffic-tab">
+														<div class="d-flex justify-content-between">
+															<p class="mb-4">+5.2% vs last 7 days</p>
+															<div id="salesTrafic-legend" class="revenuechart-legend">f</div>
+														</div>
+														<canvas id="salesTrafic"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 flex-column d-flex stretch-card">
+							<div class="row flex-grow">
+								<div class="col-sm-12 grid-margin stretch-card">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-lg-8">
+													<h3 class="font-weight-bold text-dark">Canada,Ontario</h3>
+													<p class="text-dark">Monday 3.00 PM</p>
+													<div class="d-lg-flex align-items-baseline mb-3">
+														<h1 class="text-dark font-weight-bold">23<sup class="font-weight-light"><small>o</small><small class="font-weight-medium">c</small></sup></h1>
+														<p class="text-muted ms-3">Partly cloudy</p>
+													</div>
+												</div>
+												<div class="col-lg-4">
+													<div class="position-relative">
+														<img src="./assets/images/dashboard/live.png" class="w-100" alt="">
+														<div class="live-info badge badge-success">Live</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-12 mt-4 mt-lg-0">
+													<div class="bg-primary text-white px-4 py-4 card">
+														<div class="row">
+															<div class="col-sm-6 pl-lg-5">
+																<h2>$1635</h2>
+																<p class="mb-0">Your Iincome</p>
+															</div>
+															<div class="col-sm-6 climate-info-border mt-lg-0 mt-2">
+																<h2>$2650</h2>
+																<p class="mb-0">Your Spending</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row pt-3 mt-md-1">
+												<div class="col">
+													<div class="d-flex purchase-detail-legend align-items-center">
+														<div id="circleProgress1" class="p-2"></div>
+														<div>
+															<p class="font-weight-medium text-dark text-small">Sessions</p>
+															<h3 class="font-weight-bold text-dark  mb-0">26.80%</h3>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="d-flex purchase-detail-legend align-items-center">
+														<div id="circleProgress2" class="p-2"></div>
+														<div>
+															<p class="font-weight-medium text-dark text-small">Users</p>
+															<h3 class="font-weight-bold text-dark  mb-0">56.80%</h3>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 grid-margin stretch-card">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="d-flex align-items-center justify-content-between">
+														<h4 class="card-title mb-0">Visits Today</h4>
+														<div class="dropdown">
+															<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
+															<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="profileDropdownvisittoday"><i class="mdi mdi-dots-horizontal"></i></a>
+															<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdownvisittoday">
+																<a class="dropdown-item">
+																	<i class="mdi mdi-grease-pencil text-primary"></i>
+																	Edit
+																</a>
+																<a class="dropdown-item">
+																	<i class="mdi mdi-delete text-primary"></i>
+																	Delete
+																</a>
+															</div>
+														</div>
+													</div>
+													<p class="mt-1">Calculated in last 30 days</p>
+													<div class="d-lg-flex align-items-center justify-content-between">
+														<h1 class="font-weight-bold text-dark">4332</h1>
+														<div class="mb-3">
+															<button type="button" class="btn btn-outline-light text-dark font-weight-normal">Day</button>
+															<button type="button" class="btn btn-outline-light text-dark font-weight-normal">Month</button>
+														</div>
+													</div>
+													<canvas id="visitorsToday"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-success font-weight-bold">18390</h2>
+										<i class="mdi mdi-account-outline mdi-18px text-dark"></i>
+									</div>
+								</div>
+								<canvas id="newClient"></canvas>
+								<div class="line-chart-row-title">MY NEW CLIENTS</div>
+							</div>
+						</div>
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-danger font-weight-bold">839</h2>
+										<i class="mdi mdi-refresh mdi-18px text-dark"></i>
+									</div>
+								</div>
+								<canvas id="allProducts"></canvas>
+								<div class="line-chart-row-title">All Products</div>
+							</div>
+						</div>
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-info font-weight-bold">244</h2>
+										<i class="mdi mdi-file-document-outline mdi-18px text-dark"></i>
+									</div>
+								</div>
+								<canvas id="invoices"></canvas>
+								<div class="line-chart-row-title">NEW INVOICES</div>
+							</div>
+						</div>
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-warning font-weight-bold">3259</h2>
+										<i class="mdi mdi-folder-outline mdi-18px text-dark"></i>
+									</div>
+								</div>
+								<canvas id="projects"></canvas>
+								<div class="line-chart-row-title">All PROJECTS</div>
+							</div>
+						</div>
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-secondary font-weight-bold">586</h2>
+										<i class="mdi mdi-cart-outline mdi-18px text-dark"></i>
+									</div>
+								</div>
+								<canvas id="orderRecieved"></canvas>
+								<div class="line-chart-row-title">Orders Received</div>
+							</div>
+						</div>
+						<div class="col-lg-2 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body pb-0">
+									<div class="d-flex align-items-center justify-content-between">
+										<h2 class="text-dark font-weight-bold">7826</h2>
+										<i class="mdi mdi-cash text-dark mdi-18px"></i>
+									</div>
+								</div>
+								<canvas id="transactions"></canvas>
+								<div class="line-chart-row-title">TRANSACTIONS</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 grid-margin grid-margin-md-0 stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-between">
+										<h4 class="card-title">Support Tracker</h4>
+										<h4 class="text-success font-weight-bold">Tickets<span class="text-dark ms-3">163</span></h4>
+									</div>
+									<div id="support-tracker-legend" class="support-tracker-legend"></div>
+									<canvas id="supportTracker"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 grid-margin grid-margin-md-0 stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-lg-flex align-items-center justify-content-between mb-4">
+										<h4 class="card-title">Product Orders</h4>
+										<p class="text-dark">+5.2% vs last 7 days</p>
+									</div>
+									<div class="product-order-wrap padding-reduced">
+										<div id="productorder-gage" class="gauge productorder-gage"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- partial:partials/_footer.html -->
+				<footer class="footer">
+          <div class="footer-wrap">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard </a> templates</span>
             </div>
-          </li>
-
-          <li class="main__list-item">
-            <div class="main__list-content-wrap">
-              <p class="main__list-content">Masmak Fortress</p>
-              <p class="main__list-sub">My Favorite</p>
-            </div>
-          </li>
-
-          <li class="main__list-item">
-            <div class="main__list-item-image">
-              <img src="https://images.unsplash.com/photo-1470218091926-22a08a325802?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=40&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=40" alt="">
-            </div>
-            <div class="main__list-content-wrap">
-              <p class="main__list-content">Wadi Namar Waterfall</p>
-              <p class="main__list-sub">Relaxing</p>
-            </div>
-          </li>
-
-          <li class="main__list-item">
-            <div class="main__list-content-wrap">
-              <p class="main__list-content">Wadi Hanifah</p>
-              <p class="main__list-sub">At Last</p>
-            </div>
-          </li>
-
-          <li class="main__list-item">
-            <div class="main__list-content-wrap">
-              <p class="main__list-content">Heet Cave</p>
-              <p class="main__list-sub">Loved</p>
-            </div>
-          </li>
-
-          <li class="main__list-item">
-            <div class="main__list-item-image">
-              <img src="https://images.unsplash.com/photo-1575279146056-963c4a35627b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=40&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=40" alt="">
-            </div>
-            <div class="main__list-content-wrap">
-              <p class="main__list-content">Janadriyah Cultural & Heritage Festival</p>
-              <p class="main__list-sub">Cold</p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <!-- COL-2 -->
-      <div class="main__col-2">
-
-        <!-- CARDS -->
-        <div class="main__cards-container">
-
-          <div class="main__cards-container-heading-wrap">
-            <h2 class="main__cards-container-heading ss-heading">Traveling Plans</h2>
-            <a href="#" class="ss-show">show all</a>
           </div>
-
-          <ul class="main__cards">
-            <li class="main__card" style="--hue: 25">
-              <div class="main__card-image-container">
-                <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=140&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=220" alt="" class="main__card-image">
-              </div>
-              <h3 class="main__card-heading">Daman-e-Koh</h3>
-              <p class="main__card-heading-sub">Pakistan</p>
-              <p class="main__card-heading-type">Visit</p>
-            </li>
-
-            <li class="main__card" style="--hue: 250">
-              <div class="main__card-image-container">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=140&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=220" alt="" class="main__card-image">
-              </div>
-              <h3 class="main__card-heading">Mahodand Lake</h3>
-              <p class="main__card-heading-sub">Pakistan</p>
-              <p class="main__card-heading-type">Visit</p>
-            </li>
-
-            <li class="main__card" style="--hue: 231;">
-              <div class="main__card-image-container">
-                <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=140&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=220" alt="" class="main__card-image">
-              </div>
-              <h3 class="main__card-heading">London</h3>
-              <p class="main__card-heading-sub">England</p>
-              <p class="main__card-heading-type">Work</p>
-            </li>
-          </ul>
-
-          <div class="main__cards-pagination">
-            <span class="ss-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            <div class="main__cards-buttons">
-              <button style="opacity: .4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- CROSSING -->
-        <div class="main__crossing-container">
-          <div class="main__crossing-image">
-            <img src="https://images.unsplash.com/photo-1595064085577-7c2ef98ec311?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=70&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=70" alt="">
-          </div>
-          <div class="main__crossing-current">
-            <p class="main__crossing-upper">
-              Now crossing
-            </p>
-            <h3 class="main__crossing-heading">
-              Center Point
-            </h3>
-          </div>
-        </div>
-
-        <!-- DISCOVER -->
-        <div class="main__discover">
-
-          <div class="main__discover-heading-container">
-            <h3 class="main__discover-heading ss-heading">Discover More Places</h3>
-            <a href="#" class="ss-show">show all</a>
-          </div>
-
-          <ul class="main__discover-places">
-
-            <li class="main__discover-place">
-              <h4 class="main__discover-place-heading">Riyadh Zoo</h4>
-              <p class="main__discover-place-sub">Zoo</p>
-              <div class="main__discover__more">
-                <div class="main__discover__more-svg" style="background: linear-gradient(20deg, hsla(0, 60%, 50%, .2), hsla(20, 60%, 50%, .3));">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="myGradient1" gradientTransform="rotate(20)">
-                        <stop offset="0%" stop-color="hsl(0, 60%, 50%)" />
-                        <stop offset="50%" stop-color="hsl(20, 60%, 50%)" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" fill="url(#myGradient1)" />
-                  </svg>
-                </div>
-                <span class="ss-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-            </li>
-
-            <li class=" main__discover-place">
-              <h4 class="main__discover-place-heading">Snow City</h4>
-              <p class="main__discover-place-sub">Amusement park</p>
-              <div class="main__discover__more">
-                <div class="main__discover__more-svg" style="background: linear-gradient(20deg, hsla(280, 60%, 50%, .2), hsla(300, 60%, 50%, .3));">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="myGradient2" gradientTransform="rotate(20)">
-                        <stop offset="0%" stop-color="hsl(280, 60%, 50%)" />
-                        <stop offset="50%" stop-color="hsl(300, 60%, 50%)" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" fill="url(#myGradient2)" />
-                  </svg>
-                </div>
-                <span class="ss-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-            </li>
-
-            <li class="main__discover-place">
-              <h4 class="main__discover-place-heading">Safforiland</h4>
-              <p class="main__discover-place-sub">Amusement Park</p>
-              <div class="main__discover__more">
-                <div class="main__discover__more-svg" style="background: linear-gradient(20deg, hsla(210, 60%, 50%, .2), hsla(230, 60%, 50%, .3));">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="myGradient3" gradientTransform="rotate(20)">
-                        <stop offset="0%" stop-color="hsl(210, 60%, 50%)" />
-                        <stop offset="50%" stop-color="hsl(230, 60%, 50%)" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" fill="url(#myGradient3)" />
-                  </svg>
-                </div>
-                <span class="ss-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-            </li>
-
-            <li class="main__discover-place">
-              <h4 class="main__discover-place-heading">Nahda Park</h4>
-              <p class="main__discover-place-sub">Park and Garden</p>
-              <div class="main__discover__more">
-                <div class="main__discover__more-svg" style="background: linear-gradient(20deg, hsla(120, 60%, 50%, .2), hsla(140, 60%, 50%, .3));">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="myGradient4" gradientTransform="rotate(20)">
-                        <stop offset="0%" stop-color="hsl(120, 60%, 50%)" />
-                        <stop offset="50%" stop-color="hsl(140, 60%, 50%)" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" fill="url(#myGradient4)" />
-                  </svg>
-                </div>
-                <span class="ss-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-            </li>
-
-            <div class="main__discover-right">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-
-          </ul>
-
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="main__footer">
-
-          <a href="#" class="main__footer-more ss-show">...more <span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            </span></a>
-
-          <div class="main__info">
-            <a href="https://twitter.com/AbubakerSaeed96/status/1329417170368016385" target="_blank" rel="noreferrer noopener" class="main__info-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-              </svg>
-            </a>
-            <a href="https://github.com/AbubakerSaeed/dashboard-ui-n20" target="_blank" rel="noreferrer noopener" class="main__info-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-            </a>
-            <a href="https://dribbble.com/shots/14615615-Dashboard-UI" target="_blank" rel="noreferrer noopener" class="main__info-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dribbble">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
-              </svg>
-            </a>
-
-            <p class="main__cp" style="font-size: 1.4rem; text-align: center; ">
-              Copyright &copy; <a href="https://twitter.com/AbubakerSaeed96" target="_blank" rel="noreferrer noopener" class="main__info-link" style="border-bottom: 1px solid  hsla(270, 10%, 50%, .4);">Abubaker Saeed.</a>
-            </p>
-
-            <p class="main__cr">
-              <a href="https://colorpick.vercel.app" target="_blank" rel="noreferrer noopener">
-                <img src="https://colorpick.vercel.app/assets/white-with-name.png" alt="" height="50rem">
-              </a>
-            </p>
-          </div>
-
         </footer>
-
-      </div>
-
-    </main>
-
-  </div>
-
-</div>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
-</body>
+				<!-- partial -->
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+    </div>
+		<!-- container-scroller -->
+    <!-- base:js -->
+    <script src="./assets/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="/assets/js/template.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <script src="/assets/chart.js/Chart.min.js"></script>
+    <script src="./assets/progressbar.js/progressbar.min.js"></script>
+		<script src="./assets/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
+		<script src="./assets/justgage/raphael-2.1.4.min.js"></script>
+		<script src="./assets/justgage/justgage.js"></script>
+    <script src="/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- Custom js for this page-->
+    <script src="/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  </body>
 </html>
