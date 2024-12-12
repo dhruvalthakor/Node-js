@@ -40,11 +40,16 @@ dashbordrouter.post("/isartdata",usermodel.imgupload,async(req,res)=>{
 
 
 dashbordrouter.get("/dashboard",passport.isAuth,(req, res) => {
-    console.log("hello from dashbaord")
+    
     res.render("dashboard")
 
 })
 
+dashbordrouter.get("/table",passport.isAuth,async(req, res) => {
+   const userdata=await usermodel.find({})
+    res.render("table",{userdata})
+
+})
 
 dashbordrouter.post(
     "/login",
@@ -56,6 +61,13 @@ dashbordrouter.post(
     }
 );
 
-
+dashbordrouter.get("/logout", (req, res) => {
+    req.session.destroy(function(err) {
+        // cannot access session here
+        console.log(err);
+        
+     })
+    res.redirect("/")
+})
 
 module.exports = dashbordrouter;
