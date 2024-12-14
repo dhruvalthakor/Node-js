@@ -48,10 +48,7 @@ passport.isAuth = (req, res, next) => {
  };
 
  passport.setUser = (req, res, next) => {
-   res.locals.user = req.user;
-// console.log(req.user);
-
-   
+   res.locals.user = req.user;   
    next();
  };
 

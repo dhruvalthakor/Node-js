@@ -9,6 +9,7 @@ const imgpath="/uploads"
 const userchema=mongoose.Schema({
     profile:{
         type:"string",
+        
         required:true
     },
     username:{
