@@ -3,6 +3,9 @@ const userModel = require("../model/userdatamodel");
 const path = require("path");
 // const passport = require("passport")
 const passport = require("../cofig/passport-local");
+const SubCategoryModel = require("../model/subCategory");
+const CategoryModel = require("../model/CategoryModel");
+const extraCategoryModel = require("../model/extraCategory");
 const dashbordrouter = express.Router()
 
 dashbordrouter.get("/", async (req, res) => {
@@ -99,5 +102,87 @@ dashbordrouter.get("/desabord",passport.isAuth,(req, res) => {
     res.render("desabord")
 
 })
+
+
+dashbordrouter.get("/addCategory", (req, res) => {
+    res.render("addCategory");
+  });
+  
+  dashbordrouter.post("/insertCategory", async (req, res) => {
+    try {
+      console.log(req.body);
+      await CategoryModel.create(req.body);
+      console.log("Category created");
+      res.redirect("/desabord");
+    } catch (err) {
+      console.log(err);
+    }
+  });
+  
+  dashbordrouter.get("/viewCategory", async (req, res) => {
+    try {
+      const categories = await CategoryModel.find({});
+      res.render("viewCategory", { categories });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+  
+  dashbordrouter.get("/addSubCategory", async (req, res) => {
+    try {
+      const categories = await CategoryModel.find({});
+      res.render("addSubCategory", { categories: categories });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+  
+  dashbordrouter.get("/addextraCategory", async (req, res) => {
+    console.log("extra");
+
+    try {
+      const categories = await CategoryModel.find({});
+      const subcategories = await SubCategoryModel.find({});
+      res.render("addextraCategory", { categories: categories ,subcategories:subcategories});
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  dashbordrouter.post("/insertSubCategory", async (req, res) => {
+    try {
+      await SubCategoryModel.create(req.body);
+      console.log("Subcategory created");
+      res.redirect("/viewSubCategory")
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  dashbordrouter.post("/insertextraCategory", async (req, res) => {
+    
+    
+    try {
+      await extraCategoryModel.create(req.body);
+      console.log("extracategory created");
+      res.redirect("/viewextraCategory")
+
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  dashbordrouter.get("/viewSubCategory", async (req, res) => {
+    let getData = await SubCategoryModel.find().populate("categoryId").exec();
+     res.render("viewSubCategory",{getData})
+   })
+
+   dashbordrouter.get("/viewextraCategory", async (req, res) => {
+  
+    
+    let getData = await extraCategoryModel.find().populate("categoryId").populate("subCategoryId").exec();
+     res.render("viewextraCategory",{getData})
+   })
+
 
 module.exports = dashbordrouter
