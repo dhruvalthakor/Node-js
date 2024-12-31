@@ -5,6 +5,7 @@ const { conection } = require("./config/db");
 const userRouter = require("./routes/userRouter");
 const auth = require("./middleware/auth");
 var cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 const recipesRouter = require("./routes/recipesRouter");
 const myrecipesRouter = require("./routes/myrecipes");
 
@@ -16,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(cookieParser())
 
 app.use("/",userRouter);
-// app.use(auth);
+app.use(auth);
 app.use("/recipe",recipesRouter);
 app.use("/myrecipe",myrecipesRouter);
 
